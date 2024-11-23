@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                         topBar = {
                             // Custom Action Bar
                             TopAppBar(
-                                title = { Text("My App Title") },
+                                title = { Text("Mvvm clean architecture") },
                                 actions = {
                                     IconButton(onClick = { /* Handle action */ }) {
                                         Icon(
