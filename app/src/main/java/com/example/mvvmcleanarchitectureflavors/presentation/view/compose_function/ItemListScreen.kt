@@ -1,4 +1,4 @@
-package com.example.mvvmcleanarchitectureflavors.presentation.view
+package com.example.mvvmcleanarchitectureflavors.presentation.view.compose_function
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +20,6 @@ import com.example.mvvmcleanarchitectureflavors.presentation.viewmodel.UserViewM
 import com.prasant.presentation.viewstate.UserViewState
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
-import androidx.compose.ui.draw.clip
 
 
 @Composable

@@ -26,7 +26,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.unit.dp
 import com.example.mvvmcleanarchitectureflavors.data.repository.UserRepositoryImpl
 import com.example.mvvmcleanarchitectureflavors.domain.usecase.GetUsersUseCase
-import com.example.mvvmcleanarchitectureflavors.presentation.view.ItemListScreen
+import com.example.mvvmcleanarchitectureflavors.presentation.view.compose_function.ItemListScreen
 import com.example.mvvmcleanarchitectureflavors.ui.theme.MVVMCleanarchitectureFlavorsTheme
 import dagger.hilt.android.AndroidEntryPoint
 
