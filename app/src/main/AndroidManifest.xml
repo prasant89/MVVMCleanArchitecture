@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         tools:targetApi="31">
         <activity
-            android:name=".presentation.view.CalculatorScreenActivity"
+            android:name=".presentation.view.ZeptoAndSwiggyLogin"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
