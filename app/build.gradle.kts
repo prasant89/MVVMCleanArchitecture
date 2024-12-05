@@ -1,3 +1,4 @@
+import org.gradle.kotlin.dsl.androidTestImplementation
 import org.gradle.kotlin.dsl.libs
 
 plugins {
@@ -9,11 +10,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.mvvmcleanarchitectureflavors"
+    namespace = "com.prasant.binapani"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.mvvmcleanarchitectureflavors"
+        applicationId = "com.prasant.binapani"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
@@ -59,6 +60,11 @@ dependencies {
     runtimeOnly(libs.hilt.android)
     runtimeOnly(libs.androidx.room.runtime)
 
+    implementation(libs.material3)
+    implementation(libs.androidx.material)
+    implementation(libs.ui)
+    implementation (libs.androidx.material.icons.extended)
+
     // Lifecycle components
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -75,10 +81,11 @@ dependencies {
     implementation(libs.hilt.android.v2511) // Latest stable version
     kapt(libs.hilt.android.compiler)        // Compiler for Hilt
 
-
     // Optional: Hilt for WorkManager (if using WorkManager)
     implementation(libs.androidx.work.runtime.ktx)
-
+    implementation(libs.androidx.navigation.compose)
+    implementation (libs.lottie.compose)
+    implementation(libs.androidx.hilt.navigation.compose.v120)
 
     //Compose viewmodel
     implementation(libs.activity.compose.v172)
@@ -86,6 +93,9 @@ dependencies {
     implementation(libs.androidx.lifecycle.lifecycle.viewmodel.compose)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.org.jetbrains.kotlinx.kotlinx.coroutines.android.v173.x2)
+
+    //Coil Image
+    implementation(libs.coil.compose)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
