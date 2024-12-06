@@ -1,72 +1,88 @@
-package com.jodhpurtechies.composelogin.ui.screens
+package com.prasant.binapani.presentation.navigation
 
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
+import com.prasant.binapani.presentation.view.screens.NavigationRoutes
+import com.prasant.binapani.presentation.view.screens.compose_function.BottomNavigationApp
 import com.prasant.binapani.presentation.view.screens.compose_function.SplashScreen
-import com.jodhpurtechies.composelogin.ui.screens.dashboard.DashboardScreen
+import com.prasant.binapani.presentation.view.screens.compose_function.DetailsScreen
+import com.prasant.binapani.presentation.view.screens.dashboard.DashboardScreen
 import com.prasant.binapani.presentation.view.screens.unauthenticated.login.LoginScreen
 import com.prasant.binapani.presentation.view.screens.unauthenticated.registration.RegistrationScreen
 
-/**
- * Login, registration, forgot password screens nav graph builder
- * (Unauthenticated user)
- */
+// Navigation function for unauthenticated screens
 fun NavGraphBuilder.unauthenticatedGraph(navController: NavController) {
     navigation(
         route = NavigationRoutes.Unauthenticated.NavigationRoute.route,
         startDestination = NavigationRoutes.Unauthenticated.Login.route
     ) {
-        // Login Screen
         composable(NavigationRoutes.Unauthenticated.Login.route) {
             LoginScreen(
-                onNavigateToRegistration = {
-                    navController.navigate(NavigationRoutes.Unauthenticated.Registration.route)
-                },
+                onNavigateToRegistration = { navController.navigateTo(NavigationRoutes.Unauthenticated.Registration.route) },
                 onNavigateToForgotPassword = {}, // Add functionality later
-                onNavigateToAuthenticatedRoute = { navigateToAuthenticated(navController) },
+                onNavigateToAuthenticatedRoute = { navController.navigateToAuthenticated() }
             )
         }
 
-        // Registration Screen
         composable(NavigationRoutes.Unauthenticated.Registration.route) {
             RegistrationScreen(
                 onNavigateBack = { navController.navigateUp() },
-                onNavigateToAuthenticatedRoute = { navigateToAuthenticated(navController) }
+                onNavigateToAuthenticatedRoute = { navController.navigateToAuthenticated() }
             )
         }
     }
 }
 
-fun NavGraphBuilder.authenticatedGraph(navController: NavController) {
-    navigation(
-        route = NavigationRoutes.Authenticated.NavigationRoute.route,
-        startDestination = NavigationRoutes.Authenticated.Dashboard.route
-    ) {
-        composable(NavigationRoutes.Authenticated.Dashboard.route) {
-            DashboardScreen()
-        }
-    }
-}
-
+// Navigation function for the splash screen
 fun NavGraphBuilder.splashScreen(navController: NavController) {
     composable(NavigationRoutes.RegisterSplashScreen.SplashScreen.route) {
         SplashScreen(
             onNavigateToLogin = {
-                navController.navigate(NavigationRoutes.Unauthenticated.Login.route) {
-                    popUpTo(NavigationRoutes.RegisterSplashScreen.SplashScreen.route) {
-                        inclusive = true
-                    }
-                }
+                navController.navigateTo(
+                    route = NavigationRoutes.Unauthenticated.Login.route,
+                    popUpToRoute = NavigationRoutes.RegisterSplashScreen.SplashScreen.route
+                )
             }
         )
     }
 }
 
-// Helper function for navigating to the authenticated graph
-private fun navigateToAuthenticated(navController: NavController) {
-    navController.navigate(NavigationRoutes.Authenticated.NavigationRoute.route) {
-        popUpTo(NavigationRoutes.Unauthenticated.NavigationRoute.route) { inclusive = true }
+// Navigation function for authenticated screens
+fun NavGraphBuilder.authenticatedGraph(navController: NavController) {
+    navigation(
+        route = NavigationRoutes.Authenticated.NavigationRoute.route,
+        startDestination = NavigationRoutes.Authenticated.Dashboard.route
+    ) {
+        composable(route = NavigationRoutes.Authenticated.Dashboard.route) {
+            BottomNavigationApp()
+            /* DashboardScreen(
+                navController
+               *//* onNavigateController = { navController }*//*
+               // onNavigateToDetails = { navController.navigateTo(NavigationRoutes.Authenticated.DetailsScreen.route) }
+            )*/
+        }
+
+        composable(route = NavigationRoutes.Authenticated.DetailsScreen.route) {
+            DetailsScreen(onBack = { navController.popBackStack() })
+        }
     }
+}
+
+// Extension function to navigate with optional pop-up-to logic
+private fun NavController.navigateTo(route: String, popUpToRoute: String? = null, inclusive: Boolean = true) {
+    navigate(route) {
+        popUpToRoute?.let {
+            popUpTo(it) { this.inclusive = inclusive }
+        }
+    }
+}
+
+// Extension function to navigate directly to the authenticated graph
+private fun NavController.navigateToAuthenticated() {
+    navigateTo(
+        route = NavigationRoutes.Authenticated.NavigationRoute.route,
+        popUpToRoute = NavigationRoutes.Unauthenticated.NavigationRoute.route
+    )
 }

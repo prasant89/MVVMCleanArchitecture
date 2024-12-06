@@ -1,4 +1,4 @@
-package com.jodhpurtechies.composelogin.ui.screens
+package com.prasant.binapani.presentation.view.screens
 
 sealed class NavigationRoutes {
 
@@ -13,6 +13,7 @@ sealed class NavigationRoutes {
     sealed class Authenticated(val route: String) : NavigationRoutes() {
         object NavigationRoute : Authenticated(route = "authenticated")
         object Dashboard : Authenticated(route = "Dashboard")
+        object DetailsScreen : Authenticated(route = "DetailsScreen")
     }
 
     // SplashScreen Routes

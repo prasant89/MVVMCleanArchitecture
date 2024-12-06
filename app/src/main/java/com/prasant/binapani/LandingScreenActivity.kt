@@ -15,10 +15,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.prasant.binapani.ui.theme.MyAppTheme
-import com.jodhpurtechies.composelogin.ui.screens.NavigationRoutes
-import com.jodhpurtechies.composelogin.ui.screens.authenticatedGraph
-import com.jodhpurtechies.composelogin.ui.screens.splashScreen
-import com.jodhpurtechies.composelogin.ui.screens.unauthenticatedGraph
+import com.prasant.binapani.presentation.view.screens.NavigationRoutes
+import com.prasant.binapani.presentation.navigation.authenticatedGraph
+import com.prasant.binapani.presentation.navigation.splashScreen
+import com.prasant.binapani.presentation.navigation.unauthenticatedGraph
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
