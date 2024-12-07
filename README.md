@@ -20,16 +20,17 @@ app/
 └── di/
     └── AppModule.kt
 
-    Library Using : Hilt,Flow,Jetpack Componet and Jetpack Compose
+Libraries used: Hilt, Flow, Jetpack Component, and Jetpack Compose.
 
 Here's a polished version of the description:
 
+<super>
 1)Login Screen: Implements basic input fields with empty-field validation and a password toggle for secure entry.
 2)Registration Screen: Includes simple input fields with empty-field validation to ensure completeness before submission.
 3)Enhanced UI: Features icons for input fields and a password visibility toggle for better user experience.
 4)State Management: Utilizes a ViewModel to manage input field states, button click events, and navigation between screens.
 5)Nested Navigation: Demonstrates seamless handling of two navigation flows: one for unauthenticated users (e.g., login and registration) and another for authenticated users (e.g., dashboard).
-This concise description highlights the app's features while emphasizing its structured and efficient implementation.
+This concise description highlights the app's features while emphasizing its structured and efficient implementation.</supe>
 
 
 Added Screen Short:
