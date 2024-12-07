@@ -65,6 +65,9 @@ dependencies {
     implementation(libs.ui)
     implementation (libs.androidx.material.icons.extended)
 
+    implementation (libs.androidx.runtime.livedata)
+    implementation (libs.androidx.lifecycle.lifecycle.runtime.compose)
+
     // Lifecycle components
     implementation(libs.androidx.lifecycle.livedata.ktx)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
@@ -72,6 +75,10 @@ dependencies {
     // Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
+
+    implementation (libs.kotlinx.coroutines.core.v160)
+    implementation (libs.kotlinx.coroutines.android.v160)
+
 
     // Retrofit for network calls
     implementation(libs.retrofit)
@@ -96,6 +103,10 @@ dependencies {
 
     //Coil Image
     implementation(libs.coil.compose)
+
+    // Retrofit
+    implementation(libs.retrofit.v290)
+    implementation(libs.converter.gson.v290)
 
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

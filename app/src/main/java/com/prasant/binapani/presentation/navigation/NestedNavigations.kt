@@ -5,11 +5,11 @@ import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.navigation
 import com.prasant.binapani.presentation.view.screens.NavigationRoutes
-import com.prasant.binapani.presentation.view.screens.compose_function.BottomNavigationApp
+import com.prasant.binapani.presentation.view.screens.botton_navigation.BottomNavigationApp
 import com.prasant.binapani.presentation.view.screens.compose_function.SplashScreen
-import com.prasant.binapani.presentation.view.screens.compose_function.DetailsScreen
 import com.prasant.binapani.presentation.view.screens.dashboard.DashboardScreen
 import com.prasant.binapani.presentation.view.screens.unauthenticated.login.LoginScreen
+import com.prasant.binapani.presentation.view.screens.unauthenticated.login.RelApiLoginScreen
 import com.prasant.binapani.presentation.view.screens.unauthenticated.registration.RegistrationScreen
 
 // Navigation function for unauthenticated screens
@@ -19,11 +19,13 @@ fun NavGraphBuilder.unauthenticatedGraph(navController: NavController) {
         startDestination = NavigationRoutes.Unauthenticated.Login.route
     ) {
         composable(NavigationRoutes.Unauthenticated.Login.route) {
-            LoginScreen(
+           LoginScreen(
                 onNavigateToRegistration = { navController.navigateTo(NavigationRoutes.Unauthenticated.Registration.route) },
                 onNavigateToForgotPassword = {}, // Add functionality later
                 onNavigateToAuthenticatedRoute = { navController.navigateToAuthenticated() }
             )
+
+           // RelApiLoginScreen()
         }
 
         composable(NavigationRoutes.Unauthenticated.Registration.route) {
@@ -49,7 +51,7 @@ fun NavGraphBuilder.splashScreen(navController: NavController) {
     }
 }
 
-// Navigation function for authenticated screens
+// Navigation function for authenticated screens display with  BottomNavigationApp
 fun NavGraphBuilder.authenticatedGraph(navController: NavController) {
     navigation(
         route = NavigationRoutes.Authenticated.NavigationRoute.route,
@@ -57,15 +59,6 @@ fun NavGraphBuilder.authenticatedGraph(navController: NavController) {
     ) {
         composable(route = NavigationRoutes.Authenticated.Dashboard.route) {
             BottomNavigationApp()
-            /* DashboardScreen(
-                navController
-               *//* onNavigateController = { navController }*//*
-               // onNavigateToDetails = { navController.navigateTo(NavigationRoutes.Authenticated.DetailsScreen.route) }
-            )*/
-        }
-
-        composable(route = NavigationRoutes.Authenticated.DetailsScreen.route) {
-            DetailsScreen(onBack = { navController.popBackStack() })
         }
     }
 }

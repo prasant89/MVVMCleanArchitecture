@@ -38,7 +38,7 @@ fun SplashScreen(onNavigateToLogin: () -> Unit) {
         // Delay navigation until the animation finishes
         LaunchedEffect(key1 = logoAnimationState.isAtEnd) {
             if (logoAnimationState.isAtEnd && !logoAnimationState.isPlaying) {
-                delay(900)
+                delay(800)
                 onNavigateToLogin() // Navigate after animation completes
             }
         }
