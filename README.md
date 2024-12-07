@@ -23,6 +23,14 @@
 **Registration Screen:**
 ![Registration Screen](https://github.com/user-attachments/assets/c38daf57-74b9-4678-a3eb-9ae1baccc25e)
 
+**Profile Screen:**
+
+![Screenshot_20241208_005454](https://github.com/user-attachments/assets/8de3fd16-1930-4c56-8514-db58ca01e277)
+
+**Setting Screen**
+![Screenshot_20241208_005447](https://github.com/user-attachments/assets/975be32e-9d95-4d11-8ebf-ad08830c3ae5)
+
+
 
 ## Project Structure
 
