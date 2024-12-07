@@ -1,6 +1,6 @@
 **Project Structure**
-
-**app/
+<sip>
+app/
 ├── data/
 │   ├── repository/
 │   │   └── UserRepositoryImpl.kt
@@ -19,20 +19,21 @@
 │   └── screens/
 │       └── UserScreen.kt
 └── di/
-    └── AppModule.kt**
+    └── AppModule.kt
+    </sup>
 
 _Libraries used: Hilt, Flow, Jetpack Component, and Jetpack Compose._
 
 _Here's a polished version of the description:_
 
-*** 
-1)Login Screen: Implements basic input fields with empty-field validation and a password toggle for secure entry.
-2)Registration Screen: Includes simple input fields with empty-field validation to ensure completeness before submission.
-3)Enhanced UI: Features icons for input fields and a password visibility toggle for better user experience.
-4)State Management: Utilizes a ViewModel to manage input field states, button click events, and navigation between screens.
-5)Nested Navigation: Demonstrates seamless handling of two navigation flows: one for unauthenticated users (e.g., login and registration) and another for authenticated users (e.g., dashboard).
-This concise description highlights the app's features while emphasizing its structured and efficient implementation.
-***	
+
+_1)Login Screen: Implements basic input fields with empty-field validation and a password toggle for secure entry.
+__2)Registration Screen: Includes simple input fields with empty-field validation to ensure completeness before submission.
+__3)Enhanced UI: Features icons for input fields and a password visibility toggle for better user experience.
+__4)State Management: Utilizes a ViewModel to manage input field states, button click events, and navigation between screens.
+_5)Nested Navigation: Demonstrates seamless handling of two navigation flows: one for unauthenticated users (e.g., login and registration) and another for authenticated users (e.g., dashboard).
+_This concise description highlights the app's features while emphasizing its structured and efficient implementation.
+_
 
 _Added Screen Short:_
 
