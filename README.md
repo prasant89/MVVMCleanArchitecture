@@ -1,4 +1,40 @@
-Project Structure
+# Android Clean Architecture - Login Page
+
+## Libraries Used
+
+- Hilt
+- Flow
+- Jetpack Components
+- Jetpack Compose
+
+## Features
+
+1. **Login Screen**: Implements input fields with validation for empty fields and a toggle for password visibility.
+2. **Registration Screen**: This screen contains input fields with validation to ensure that all required fields are filled before submission.
+3. **Enhanced UI**: This version incorporates icons for input fields and a password visibility toggle to improve user experience.
+4. **State Management**: This method utilizes a ViewModel to handle input states, button clicks, and navigation between screens.
+5. **Nested Navigation**: Demonstrates smooth navigation for unauthenticated users (e.g., login and registration) and authenticated users (e.g., dashboard).
+
+## Screenshots
+
+**Login Screen:**
+![Login Screen](https://github.com/user-attachments/assets/a755ce3a-cd20-4fbd-89c5-87031af083e5)
+
+**Registration Screen:**
+![Registration Screen](https://github.com/user-attachments/assets/c38daf57-74b9-4678-a3eb-9ae1baccc25e)
+
+**Profile Screen:**
+
+![Screenshot_20241208_005454](https://github.com/user-attachments/assets/8de3fd16-1930-4c56-8514-db58ca01e277)
+
+**Setting Screen**
+![Screenshot_20241208_005447](https://github.com/user-attachments/assets/975be32e-9d95-4d11-8ebf-ad08830c3ae5)
+
+
+
+## Project Structure
+
+```text
 app/
 ├── data/
 │   ├── repository/
@@ -20,24 +56,6 @@ app/
 └── di/
     └── AppModule.kt
 
-    Library Using : Hilt,Flow,Jetpack Componet and Jetpack Compose
 
-Here's a polished version of the description:
 
-1)Login Screen: Implements basic input fields with empty-field validation and a password toggle for secure entry.
-2)Registration Screen: Includes simple input fields with empty-field validation to ensure completeness before submission.
-3)Enhanced UI: Features icons for input fields and a password visibility toggle for better user experience.
-4)State Management: Utilizes a ViewModel to manage input field states, button click events, and navigation between screens.
-5)Nested Navigation: Demonstrates seamless handling of two navigation flows: one for unauthenticated users (e.g., login and registration) and another for authenticated users (e.g., dashboard).
 This concise description highlights the app's features while emphasizing its structured and efficient implementation.
-
-
-Added Screen Short:
-
-For LogIn :
-![Screenshot_20241206_011733](https://github.com/user-attachments/assets/a755ce3a-cd20-4fbd-89c5-87031af083e5)
-
-For Register:
-![Screenshot_20241206_011808](https://github.com/user-attachments/assets/c38daf57-74b9-4678-a3eb-9ae1baccc25e)
-
-
