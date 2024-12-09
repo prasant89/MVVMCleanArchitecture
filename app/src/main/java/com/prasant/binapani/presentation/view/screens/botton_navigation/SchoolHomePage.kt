@@ -34,6 +34,8 @@ fun  SchoolHomePage(navController: NavController) {
             item { AnnouncementsSection() }
             item { Spacer(modifier = Modifier.height(16.dp)) }
             item { EventsSection() }
+            item { Spacer(modifier = Modifier.height(16.dp)) }
+            item { SportsSection() }
         }
     }
 }
@@ -43,8 +45,8 @@ fun HeaderSection() {
     Box(
         modifier = Modifier
             .fillMaxWidth()
-            .background(MaterialTheme.colorScheme.primary)
-            .padding(16.dp),
+            .background(MaterialTheme.colorScheme.onSurface)
+            .padding(20.dp),
         contentAlignment = Alignment.Center
     ) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -131,5 +133,18 @@ fun EventsSection() {
         )
         Text("🎉 Science Exhibition - March 25", style = MaterialTheme.typography.bodyMedium)
         Text("🎓 Graduation Ceremony - April 15", style = MaterialTheme.typography.bodyMedium)
+    }
+}
+
+@Composable
+fun SportsSection() {
+    Column(modifier = Modifier.padding(16.dp)) {
+        Text(
+            text = "Sports Events",
+            style = MaterialTheme.typography.titleMedium,
+            modifier = Modifier.padding(bottom = 8.dp)
+        )
+        Text("🎉 Cricket Event - December 25", style = MaterialTheme.typography.bodyMedium)
+        Text("🎓 Kabadi Ceremony - June 15", style = MaterialTheme.typography.bodyMedium)
     }
 }
